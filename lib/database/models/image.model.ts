@@ -4,7 +4,7 @@ export interface IImage extends Document { // extends Document from mongoose to 
     title: string;
     transformationType: string;
     publicId: string;
-    secureUrl: string; // URL type is typically represented as string in TypeScript
+    secureURL: string; // URL type is typically represented as string in TypeScript
     width?: number; // Optional field
     height?: number; // Optional field
     config?: object; // More specific type can be used if the shape of config is known
@@ -17,8 +17,8 @@ export interface IImage extends Document { // extends Document from mongoose to 
         firstName: string;
         lastName: string;
     }
-    createdAt: Date; // Date type in TypeScript
-    updatedAt: Date; // Date type in TypeScript
+    createdAt?: Date; // Date type in TypeScript
+    updatedAt?: Date; // Date type in TypeScript
 }
 
 
@@ -26,11 +26,11 @@ const ImageSchema = new Schema({
     title: { type: String, required: true },
     transformationType: { type: String, required: true },
     publicId: { type: String, required: true },
-    secureUrl: { type: URL, required: true },
+    secureURL: { type: String, required: true },
     width: { type: Number },
     height: { type: Number },
     config: { type: Object },
-    transformationUrl: { type: URL },
+    transformationUrl: { type: String },
     aspectRatio: { type: String },
     color: { type: String },
     prompt: { type: String },
